@@ -322,6 +322,7 @@ COMMON_QUESTIONS = {
         ("Wie heißt du?", "What's your name?", "Jak se jmenuješ?", "Як тебе звати?"),
         ("Wo wohnst du?", "Where do you live?", "Kde bydlíš?", "Де ти живеш?"),
         ("Woher kommst du?", "Where are you from?", "Odkud pocházíš?", "Звідки ти?"),
+        ("Ich komme aus ...", "I come from ...", "Pocházím z ...", "Я родом із ..."),
         ("Wie alt bist du?", "How old are you?", "Kolik ti je let?", "Скільки тобі років?"),
         ("Was machst du gern?", "What do you like doing?", "Co rád/a děláš?", "Що ти любиш робити?"),
         ("Welche Musik hörst du gern?", "What music do you like listening to?", "Jakou hudbu rád/a posloucháš?", "Яку музику ти любиш слухати?"),
