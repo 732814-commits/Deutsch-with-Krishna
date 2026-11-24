@@ -68,6 +68,10 @@ TEXT = {
             "When?",
         ],
         "question_map_prompt": "First decide what you want to ask about:",
+        "common_questions_title": "Common questions",
+        "common_questions_intro": "Notice how the verb ending changes with the person:",
+        "du_questions": "Talking to **you** (du)",
+        "er_sie_questions": "Talking about **him or her** (er / sie)",
         "verb_example": "Regular verb example",
         "verb_forms_intro": "The infinitive **wohnen** means “to live.” Remove **-en**, then add the ending for each person:",
         "verb_persons": ["I", "you (singular)", "he / she / it", "we", "you (plural)", "they / you (formal)"],
@@ -140,6 +144,10 @@ TEXT = {
             "Kdy?",
         ],
         "question_map_prompt": "Nejprve si vyber, na co se chceš zeptat:",
+        "common_questions_title": "Běžné otázky",
+        "common_questions_intro": "Všimni si, jak se mění koncovka slovesa podle osoby:",
+        "du_questions": "Otázky na **tebe** (du)",
+        "er_sie_questions": "Otázky o **něm nebo o ní** (er / sie)",
         "verb_example": "Příklad pravidelného slovesa",
         "verb_forms_intro": "Infinitiv **wohnen** znamená „bydlet“. Odstraň **-en** a přidej koncovku podle osoby:",
         "verb_persons": ["já", "ty (jednotné číslo)", "on / ona / ono", "my", "vy (množné číslo)", "oni / ony / Vy (vykání)"],
@@ -212,6 +220,10 @@ TEXT = {
             "Коли?",
         ],
         "question_map_prompt": "Спочатку обери, про що хочеш запитати:",
+        "common_questions_title": "Поширені запитання",
+        "common_questions_intro": "Зверни увагу, як змінюється закінчення дієслова залежно від особи:",
+        "du_questions": "Запитання до **тебе** (du)",
+        "er_sie_questions": "Запитання про **нього або неї** (er / sie)",
         "verb_example": "Приклад правильного дієслова",
         "verb_forms_intro": "Інфінітив **wohnen** означає «жити». Відкинь **-en** і додай закінчення для кожної особи:",
         "verb_persons": ["я", "ти (однина)", "він / вона / воно", "ми", "ви (множина)", "вони / Ви (ввічливо)"],
@@ -301,6 +313,21 @@ QUESTION_GROUPS = {
     "manner": [5],
     "reason": [6],
     "choice": [4],
+}
+COMMON_QUESTIONS = {
+    "du": [
+        ("Wie heißt du?", "What's your name?", "Jak se jmenuješ?", "Як тебе звати?"),
+        ("Wo wohnst du?", "Where do you live?", "Kde bydlíš?", "Де ти живеш?"),
+        ("Woher kommst du?", "Where are you from?", "Odkud pocházíš?", "Звідки ти?"),
+        ("Wie alt bist du?", "How old are you?", "Kolik ti je let?", "Скільки тобі років?"),
+        ("Was machst du gern?", "What do you like doing?", "Co rád/a děláš?", "Що ти любиш робити?"),
+        ("Welche Musik hörst du gern?", "What music do you like listening to?", "Jakou hudbu rád/a posloucháš?", "Яку музику ти любиш слухати?"),
+    ],
+    "er_sie": [
+        ("Wie heißt er?", "What's his name?", "Jak se jmenuje?", "Як його звати?"),
+        ("Wo wohnt sie?", "Where does she live?", "Kde bydlí?", "Де вона живе?"),
+        ("Was macht er gern?", "What does he like doing?", "Co rád dělá?", "Що він любить робити?"),
+    ],
 }
 
 
@@ -477,6 +504,18 @@ elif topic_key == "questions":
                     f"↓  \n"
                     f"**{LESSONS['questions'][question_index]}**"
                 )
+    st.subheader(text["common_questions_title"])
+    st.write(text["common_questions_intro"])
+    columns = st.columns(2)
+    for column, group, label in (
+        (columns[0], "du", text["du_questions"]),
+        (columns[1], "er_sie", text["er_sie_questions"]),
+    ):
+        with column.container(border=True):
+            st.markdown(label)
+            for german, english, czech, ukrainian in COMMON_QUESTIONS[group]:
+                translation = {"en": english, "cs": czech, "uk": ukrainian}[language]
+                st.markdown(f"**{german}**  \n{translation}")
 elif topic_key == "verbs":
     st.subheader(text["verb_example"])
     st.write(text["verb_forms_intro"])
