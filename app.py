@@ -89,7 +89,7 @@ TEXT = {
     },
     "cs": {
         "title": "Němčina s Krišnou",
-        "subtitle": "Uč se německá čísla, pozdravy, barvy, dny v týdnu, otázky s W a časování sloves.",
+        "subtitle": "Uč se německá čísla, pozdravy, barvy, dny v týdnu, otázky s W a tvarování sloves.",
         "language": "Jazyk výuky",
         "topic": "Vyber si téma",
         "topics": {
@@ -166,7 +166,7 @@ TEXT = {
     },
     "uk": {
         "title": "Німецька з Крішною",
-        "subtitle": "Вивчай німецькі числа, привітання, кольори, дні тижня, W-питання та дієвідмінювання.",
+        "subtitle": "Вивчай німецькі числа, привітання, кольори, дні тижня, W-питання та тварування дієслів.",
         "language": "Мова навчання",
         "topic": "Обери тему",
         "topics": {
