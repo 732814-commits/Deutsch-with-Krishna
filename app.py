@@ -99,7 +99,7 @@ TEXT = {
             "days": "Dny v týdnu",
             "questions": "Otázky s W",
             "common_questions": "Běžné otázky",
-            "verbs": "Časování sloves",
+            "verbs": "Tvarování sloves",
         },
         "choose": "Vyber si, co se chceš naučit:",
         "number_prompt": "Zadej číslo od 0 do 199",
