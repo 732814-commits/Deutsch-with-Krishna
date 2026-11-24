@@ -21,6 +21,7 @@ TEXT = {
             "colors": "Colors",
             "days": "Days of the week",
             "questions": "W-questions",
+            "common_questions": "Common questions",
             "verbs": "Verb forms",
         },
         "choose": "Choose an item to learn:",
@@ -97,6 +98,7 @@ TEXT = {
             "colors": "Barvy",
             "days": "Dny v týdnu",
             "questions": "Otázky s W",
+            "common_questions": "Běžné otázky",
             "verbs": "Časování sloves",
         },
         "choose": "Vyber si, co se chceš naučit:",
@@ -173,6 +175,7 @@ TEXT = {
             "colors": "Кольори",
             "days": "Дні тижня",
             "questions": "W-питання",
+            "common_questions": "Поширені запитання",
             "verbs": "Форми дієслів",
         },
         "choose": "Обери, що хочеш вивчити:",
@@ -504,6 +507,7 @@ elif topic_key == "questions":
                     f"↓  \n"
                     f"**{LESSONS['questions'][question_index]}**"
                 )
+elif topic_key == "common_questions":
     st.subheader(text["common_questions_title"])
     st.write(text["common_questions_intro"])
     columns = st.columns(2)
