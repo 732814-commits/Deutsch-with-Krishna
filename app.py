@@ -12,7 +12,7 @@ LANGUAGES = {
 TEXT = {
     "en": {
         "title": "Deutsch with Krishna",
-        "subtitle": "Learn German numbers, greetings, colors, and days of the week.",
+        "subtitle": "Learn German numbers, greetings, colors, days of the week, W-questions, and verb forms.",
         "language": "Learning language",
         "topic": "Choose a topic",
         "topics": {
@@ -20,6 +20,8 @@ TEXT = {
             "greetings": "Greetings",
             "colors": "Colors",
             "days": "Days of the week",
+            "questions": "W-questions",
+            "verbs": "Verb forms",
         },
         "choose": "Choose an item to learn:",
         "number_prompt": "Enter a number from 0 to 199",
@@ -55,10 +57,34 @@ TEXT = {
             "This is Saturday.",
             "This is Sunday.",
         ],
+        "question_descriptions": [
+            "Where? (location)",
+            "What?",
+            "Who?",
+            "Where from?",
+            "Which? (masculine, feminine, or neuter form)",
+            "How?",
+            "Why?",
+            "When?",
+        ],
+        "question_map_prompt": "First decide what you want to ask about:",
+        "verb_example": "Regular verb example",
+        "verb_forms_intro": "The infinitive **wohnen** means “to live.” Remove **-en**, then add the ending for each person:",
+        "verb_persons": ["I", "you (singular)", "he / she / it", "we", "you (plural)", "they / you (formal)"],
+        "verb_table_headers": ["Pronoun", "Meaning", "Verb form"],
+        "question_group_labels": {
+            "person": "A person",
+            "thing": "A thing",
+            "place": "A place",
+            "time": "Time",
+            "manner": "The way something happens",
+            "reason": "A reason",
+            "choice": "A choice",
+        },
     },
     "cs": {
         "title": "Němčina s Krišnou",
-        "subtitle": "Uč se německá čísla, pozdravy, barvy a dny v týdnu.",
+        "subtitle": "Uč se německá čísla, pozdravy, barvy, dny v týdnu, otázky s W a časování sloves.",
         "language": "Jazyk výuky",
         "topic": "Vyber si téma",
         "topics": {
@@ -66,6 +92,8 @@ TEXT = {
             "greetings": "Pozdravy",
             "colors": "Barvy",
             "days": "Dny v týdnu",
+            "questions": "Otázky s W",
+            "verbs": "Časování sloves",
         },
         "choose": "Vyber si, co se chceš naučit:",
         "number_prompt": "Zadej číslo od 0 do 199",
@@ -101,10 +129,34 @@ TEXT = {
             "Tohle je sobota.",
             "Tohle je neděle.",
         ],
+        "question_descriptions": [
+            "Kde? (místo)",
+            "Co?",
+            "Kdo?",
+            "Odkud?",
+            "Který? Která? Které?",
+            "Jak?",
+            "Proč?",
+            "Kdy?",
+        ],
+        "question_map_prompt": "Nejprve si vyber, na co se chceš zeptat:",
+        "verb_example": "Příklad pravidelného slovesa",
+        "verb_forms_intro": "Infinitiv **wohnen** znamená „bydlet“. Odstraň **-en** a přidej koncovku podle osoby:",
+        "verb_persons": ["já", "ty (jednotné číslo)", "on / ona / ono", "my", "vy (množné číslo)", "oni / ony / Vy (vykání)"],
+        "verb_table_headers": ["Zájmeno", "Význam", "Tvar slovesa"],
+        "question_group_labels": {
+            "person": "Osoba",
+            "thing": "Věc",
+            "place": "Místo",
+            "time": "Čas",
+            "manner": "Způsob",
+            "reason": "Důvod",
+            "choice": "Výběr",
+        },
     },
     "uk": {
         "title": "Німецька з Крішною",
-        "subtitle": "Вивчай німецькі числа, привітання, кольори та дні тижня.",
+        "subtitle": "Вивчай німецькі числа, привітання, кольори, дні тижня, W-питання та дієвідмінювання.",
         "language": "Мова навчання",
         "topic": "Обери тему",
         "topics": {
@@ -112,6 +164,8 @@ TEXT = {
             "greetings": "Привітання",
             "colors": "Кольори",
             "days": "Дні тижня",
+            "questions": "W-питання",
+            "verbs": "Форми дієслів",
         },
         "choose": "Обери, що хочеш вивчити:",
         "number_prompt": "Введи число від 0 до 199",
@@ -147,8 +201,40 @@ TEXT = {
             "Це субота.",
             "Це неділя.",
         ],
+        "question_descriptions": [
+            "Де? (місце)",
+            "Що?",
+            "Хто?",
+            "Звідки?",
+            "Який? Яка? Яке?",
+            "Як?",
+            "Чому?",
+            "Коли?",
+        ],
+        "question_map_prompt": "Спочатку обери, про що хочеш запитати:",
+        "verb_example": "Приклад правильного дієслова",
+        "verb_forms_intro": "Інфінітив **wohnen** означає «жити». Відкинь **-en** і додай закінчення для кожної особи:",
+        "verb_persons": ["я", "ти (однина)", "він / вона / воно", "ми", "ви (множина)", "вони / Ви (ввічливо)"],
+        "verb_table_headers": ["Займенник", "Значення", "Форма дієслова"],
+        "question_group_labels": {
+            "person": "Людина",
+            "thing": "Річ",
+            "place": "Місце",
+            "time": "Час",
+            "manner": "Спосіб дії",
+            "reason": "Причина",
+            "choice": "Вибір",
+        },
     },
 }
+VERB_FORMS = [
+    ("ich", "wohne"),
+    ("du", "wohnst"),
+    ("er / sie / es", "wohnt"),
+    ("wir", "wohnen"),
+    ("ihr", "wohnt"),
+    ("sie / Sie", "wohnen"),
+]
 
 LESSONS = {
     "greetings": [
@@ -163,6 +249,16 @@ LESSONS = {
     ],
     "colors": ["Rot", "Blau", "Grün", "Gelb", "Schwarz", "Weiß", "Orange", "Lila"],
     "days": ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"],
+    "questions": [
+        "Wo",
+        "Was",
+        "Wer",
+        "Woher",
+        "Welcher / Welche / Welches",
+        "Wie",
+        "Warum",
+        "Wann",
+    ],
 }
 
 UNITS = [
@@ -196,6 +292,15 @@ TENS = {
     7: "siebzig",
     8: "achtzig",
     9: "neunzig",
+}
+QUESTION_GROUPS = {
+    "person": [2],
+    "thing": [1],
+    "place": [0, 3],
+    "time": [7],
+    "manner": [5],
+    "reason": [6],
+    "choice": [4],
 }
 
 
@@ -360,6 +465,29 @@ if topic_key == "numbers":
             st.info(text["number_rule"])
         elif 100 < learned_number < 200:
             st.info(text["hundreds_rule"])
+elif topic_key == "questions":
+    st.write(text["question_map_prompt"])
+    columns = st.columns(2)
+    for group_index, (group, question_indexes) in enumerate(QUESTION_GROUPS.items()):
+        with columns[group_index % len(columns)].container(border=True):
+            st.subheader(text["question_group_labels"][group])
+            for question_index in question_indexes:
+                st.markdown(
+                    f"**{text['question_descriptions'][question_index]}**  \n"
+                    f"↓  \n"
+                    f"**{LESSONS['questions'][question_index]}**"
+                )
+elif topic_key == "verbs":
+    st.subheader(text["verb_example"])
+    st.write(text["verb_forms_intro"])
+    st.markdown("### wohnen")
+    st.table(
+        {
+            text["verb_table_headers"][0]: [form[0] for form in VERB_FORMS],
+            text["verb_table_headers"][1]: text["verb_persons"],
+            text["verb_table_headers"][2]: [form[1] for form in VERB_FORMS],
+        }
+    )
 else:
     st.write(text["choose"])
     words = LESSONS[topic_key]
